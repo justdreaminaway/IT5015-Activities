@@ -1,0 +1,1 @@
+-novid -high -no3d9ex -noforcemaccel -novid -refresh 60 -freq 60 +fps_max 
