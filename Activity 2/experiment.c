@@ -58,3 +58,27 @@ void sortRecords(int display){
 		break;	
 	}
 }
+
+void displayOption(){
+	int display, choice, option;
+
+	printf("[1] Display All Experiments\n[2] Display Biology Experiments\n[3] Display Chemistry Experiments\n[4] Display Physics Experiments\n");
+	printf("\nSELECT DISPLAY OPTION: ");
+	scanf("%d", &display);
+	sortRecords(display);
+	fflush(stdin);
+	
+	printf("\n[1] Select Another Display Option\n[2] View Group Details\n");
+	printf("\nSELECT OPTION: ");
+	scanf("%d", &option);
+	
+	if(option == 1){
+		system("cls");
+		displayOption();
+	}else if (option == 2){
+		printf("\n\nENTER GROUP NUMBER TO VIEW DETAILS: ");
+		scanf("%d", &choice);
+		system("cls");
+		displayRecordDetails(choice);
+	}
+}
