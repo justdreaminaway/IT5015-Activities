@@ -82,3 +82,30 @@ void displayOption(){
 		displayRecordDetails(choice);
 	}
 }
+
+void displayRecordDetails(int number){
+	int i, option;
+	
+	for(i = 0; records[i].group != number; i++);
+	printf("*****************************************************************************\n");
+    printf("                            EXPERIMENT DETAILS                               \n");
+    printf("*****************************************************************************\n");   
+	printf("\n[[ GROUP NUMBER ]]: %d\n", records[i].group);
+	printf("[[ GROUP LEADER ]]: %s\n\n\n", records[i].leader);
+	printf("[[ EXPERIMENT TITLE ]]: %s\n", records[i].title);
+	printf("[[ EXPERIMENT DESCRIPTION ]]: \n%s\n\n\n", records[i].desc);
+	printf("[[ FIELD ]]: %s\n", records[i].field);
+	printf("[[ GRADE ]]: %s\n", records[i].grade);
+	printf("*****************************************************************************\n");   
+	fflush(stdin);
+	printf("\n\n[1] Update Grade\n[2] Go Back\n");
+	printf("\nSELECT AN OPTION: ");
+	scanf("%d", &option);
+	
+	if(option == 1){
+		updateGrade(number);
+	}else if (option == 2){
+		system("cls");
+		displayOption();
+	}	
+}
