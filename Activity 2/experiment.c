@@ -17,6 +17,28 @@ experiment records[9];
 int main(void)
 {
 
+	FILE *fp = fopen("experiment.txt","r");
+	experiment S;
+    int count=0, total=0, x=0, i=0, y;
+    int choice, display;
+
+	for(total = 0; total < 19; total++)
+	{
+	 	char row[5000];
+	 	fgets(row, 5000, (FILE*)fp);
+	 	count++;
+	 	if(count != 1)
+	 	{
+	 		total++;
+	    	storeRecords(row,x);
+	    	x++;
+	 	}
+	}
+	
+	displayOption();
+	fflush(stdin);
+
+	return 0;
 }
 
 void storeRecords(char characters[], int x)
