@@ -3,6 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
   
+typedef struct {
+	int group;
+	char leader[100];
+	char title[100];
+	char desc[250];
+	char field[100];
+	char grade[10];
+}experiment;
+experiment records[9];
 
 
 int main(void)
@@ -10,6 +19,43 @@ int main(void)
 
 }
 
+void storeRecords(char characters[], int x)
+{
+   char *token = strtok(characters,",");
+   int counter=0,i,j;
+
+   while(token != NULL) 
+   {		
+		switch(counter){
+			case 0:
+			records[x].group = atoi(token);
+			break;
+			
+			case 1:
+			strcpy(records[x].leader, token);
+			break;
+			
+			case 2:
+			strcpy(records[x].title, token);
+			break;
+			
+			case 3:
+			strcpy(records[x].desc, token);
+			break;
+			
+			case 4:
+			strcpy(records[x].field, token);
+			break;
+			
+			case 5:
+			strcpy(records[x].grade, token);
+			break;
+		}	
+	
+		counter++;
+		token = strtok(NULL,",");
+   }
+}
 
 void sortRecords(int display){
 	int i;
