@@ -177,3 +177,29 @@ void displayRecordDetails(int number){
 		displayOption();
 	}	
 }
+//==================================================================================
+void updateGrade(int grp){
+	int option;
+	char pass[]="Pass";
+	char fail[]="Fail";
+	
+	printf("\nNote: Group %d Grade: %s",records[grp-1].group,records[grp-1].grade);
+	fflush(stdin);
+	
+	//------------------------------------------------------------------------------
+	printf("\n\nChange this group's Grade to:\n[1] Pass\n[2] Fail");
+	printf("\nEnter your option: ");
+	scanf("%d", &option);
+	
+	if(option == 1){
+		strcpy(records[grp-1].grade,pass);
+	}else if (option == 2){
+		strcpy(records[grp-1].grade,fail);
+	}
+	
+	//-----------------------------------------------------------------------------
+	system("cls");
+	printf("\n\n***Group's Grade has been successfully changed!***\n\n");
+	
+	displayRecordDetails(grp);
+}
