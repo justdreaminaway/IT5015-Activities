@@ -13,6 +13,11 @@ typedef struct {
 }experiment;
 experiment records[9];
 
+void storeRecords(char *characters, int x);
+void sortRecords(int display);
+void displayOption();
+void displayRecordDetails(int number);
+void updateGrade(int number);
 
 int main(void)
 {
